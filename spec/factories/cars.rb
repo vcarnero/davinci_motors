@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :car do
-    make "MyString"
-    model "MyString"
-    year 1
-    price "9.99"
+    name { Faker::Make.product_name }
+    name { Faker::Model.product_name }
+    year { rand(30) + 1980}
+    price { sprintf("%.02f" , rand(10000.00 + 5000)}
   end
 end
+
